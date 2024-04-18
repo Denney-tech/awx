@@ -24,6 +24,7 @@ describe('<MiscSystemDetail />', () => {
       data: {
         ACTIVITY_STREAM_ENABLED: true,
         ACTIVITY_STREAM_ENABLED_FOR_INVENTORY_SYNC: false,
+        DOWNSTREAM_COLLECTIONS_PREFERRED: false,
         ORG_ADMINS_CAN_SEE_ALL_USERS: true,
         MANAGE_ORGANIZATION_AUTH: true,
         TOWER_URL_BASE: 'https://towerhost',
@@ -103,6 +104,7 @@ describe('<MiscSystemDetail />', () => {
     );
     assertDetail(wrapper, 'Enable Activity Stream', 'On');
     assertDetail(wrapper, 'Enable Activity Stream for Inventory Sync', 'Off');
+    assertDetail(wrapper, 'Prefer Downstream Collections', 'Off')
     assertDetail(wrapper, 'Red Hat customer password', 'Encrypted');
     assertDetail(wrapper, 'Red Hat customer username', 'name1');
     assertDetail(wrapper, 'Red Hat or Satellite password', 'Encrypted');

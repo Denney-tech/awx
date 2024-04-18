@@ -33,6 +33,15 @@ register(
 )
 
 register(
+    'DOWNSTREAM_COLLECTIONS_PREFERRED',
+    field_class=fields.BooleanField,
+    label=_('Prefer Downstream Collections'),
+    help_text=_('Use downstream version of collections instead of upstream.'),
+    category=_('System'),
+    category_slug='system',
+)
+
+register(
     'ORG_ADMINS_CAN_SEE_ALL_USERS',
     field_class=fields.BooleanField,
     label=_('All Users Visible to Organization Admins'),

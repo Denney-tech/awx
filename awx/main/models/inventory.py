@@ -1453,8 +1453,9 @@ class PluginFileInjector(object):
         Note that a plugin value of '' should still be overridden.
         '''
         if self.plugin_name is not None:
-            if hasattr(self, 'downstream_namespace') and server_product_name() != 'AWX':
-                source_vars['plugin'] = f'{self.downstream_namespace}.{self.downstream_collection}.{self.plugin_name}'
+            if hasattr(self, 'downstream_namespace') and getattr(settings, 'DOWNSTREAM_COLLECTIONS_PREFERRED') and (
+                server_product_name() != 'AWX' or getattr(self, 'collection', 'awx') != 'awx'):
+                    source_vars['plugin'] = f'{self.downstream_namespace}.{self.downstream_collection}.{self.plugin_name}'
             elif self.use_fqcn:
                 source_vars['plugin'] = f'{self.namespace}.{self.collection}.{self.plugin_name}'
             else:

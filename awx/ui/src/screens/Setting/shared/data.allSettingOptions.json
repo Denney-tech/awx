@@ -20,6 +20,15 @@
               "category_slug": "system",
               "default": false
           },
+          "DOWNSTREAM_COLLECTIONS_PREFERRED": {
+            "type": "boolean",
+            "required": true,
+            "label": "Prefer Downstream Collections",
+            "help_text": "Use downstream version of collections instead of upstream.",
+            "category": "System",
+            "category_slug": "system",
+            "default": false
+          },
           "ORG_ADMINS_CAN_SEE_ALL_USERS": {
               "type": "boolean",
               "required": true,
@@ -4454,6 +4463,14 @@
               "category": "System",
               "category_slug": "system",
               "defined_in_file": false
+          },
+          "DOWNSTREAM_COLLECTIONS_PREFERRED": {
+            "type": "boolean",
+            "label": "Prefer Downstream Collections",
+            "help_text": "Use downstream version of collections instead of upstream.",
+            "category": "System",
+            "category_slug": "system",
+            "defined_in_file": false
           },
           "ORG_ADMINS_CAN_SEE_ALL_USERS": {
               "type": "boolean",

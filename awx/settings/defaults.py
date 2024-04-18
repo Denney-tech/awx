@@ -13,6 +13,9 @@ from datetime import timedelta
 import ldap
 from split_settings.tools import include
 
+# Some settings may differ between Open/Licensed products
+from awx.main.utils.licensing import server_product_name
+
 
 DEBUG = True
 SQL_DEBUG = DEBUG
@@ -602,6 +605,13 @@ AWX_TASK_ENV = {}
 # Additional environment variables to apply when running ansible-galaxy commands
 # to fetch Ansible content - roles and collections
 GALAXY_TASK_ENV = {'ANSIBLE_FORCE_COLOR': 'false', 'GIT_SSH_COMMAND': "ssh -o StrictHostKeyChecking=no"}
+
+# Allow users to switch to downstream collections if they build their own EE's for it.
+if server_product_name() != 'AWX':
+  DOWNSTREAM_COLLECTIONS_PREFERRED = True
+else:
+  DOWNSTREAM_COLLECTIONS_PREFERRED = False
+    
 
 # Rebuild Host Smart Inventory memberships.
 AWX_REBUILD_SMART_MEMBERSHIP = False

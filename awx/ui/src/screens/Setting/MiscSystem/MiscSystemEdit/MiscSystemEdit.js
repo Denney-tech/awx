@@ -39,6 +39,7 @@ function MiscSystemEdit() {
         data,
         'ACTIVITY_STREAM_ENABLED',
         'ACTIVITY_STREAM_ENABLED_FOR_INVENTORY_SYNC',
+        'DOWNSTREAM_COLLECTIONS_PREFERRED',
         'AUTOMATION_ANALYTICS_GATHER_INTERVAL',
         'AUTOMATION_ANALYTICS_URL',
         'AUTOMATION_ANALYTICS_LAST_ENTRIES',
@@ -175,6 +176,10 @@ function MiscSystemEdit() {
                 <BooleanField
                   name="ACTIVITY_STREAM_ENABLED_FOR_INVENTORY_SYNC"
                   config={system.ACTIVITY_STREAM_ENABLED_FOR_INVENTORY_SYNC}
+                />
+                <BooleanField
+                  name="DOWNSTREAM_COLLECTIONS_PREFERRED"
+                  config={system.DOWNSTREAM_COLLECTIONS_PREFERRED}
                 />
                 <ExecutionEnvField
                   name="DEFAULT_EXECUTION_ENVIRONMENT"
